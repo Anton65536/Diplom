@@ -119,15 +119,15 @@
     cityInfo.backgroundColor = [UIColor whiteColor];
     cityInfo.textColor = [UIColor redColor];
     cityInfo.hidden = NO;
-    cityInfo.numberOfLines = 0;
+    cityInfo.numberOfLines = 0 ;
     cityInfo.lineBreakMode = NSLineBreakByWordWrapping;
     cityInfo.layer.borderWidth = 2.0;
     cityInfo.layer.borderColor = [UIColor darkGrayColor].CGColor;
     cityInfo.translatesAutoresizingMaskIntoConstraints = NO;
-
+    [cityInfo sizeToFit];
     self.cityInfo = cityInfo;
 
-    NSLog(@"dictionary %@", [citiesAndDescription description]);
+//    NSLog(@"dictionary %@", [citiesAndDescription description]);
 #pragma mark - UIStackView
     //horizontal additional
     [letterLabel.heightAnchor constraintEqualToConstant:50].active = YES;
@@ -160,7 +160,7 @@
     [buttonHelpWithCity.heightAnchor constraintEqualToConstant:50].active = YES;
     [buttonHelpWithCity.widthAnchor constraintEqualToConstant:100].active = YES;
     
-    [cityInfo.heightAnchor constraintEqualToConstant:200].active = YES;
+    [cityInfo.heightAnchor constraintEqualToConstant:150].active = YES;
     [cityInfo.widthAnchor constraintEqualToConstant:310].active = YES;
      
      //Stack View
@@ -169,7 +169,7 @@
      verticalStackView.axis = UILayoutConstraintAxisVertical;
      verticalStackView.distribution = UIStackViewDistributionFillEqually;
      verticalStackView.alignment = UIStackViewAlignmentCenter;
-     verticalStackView.spacing = 30;
+     verticalStackView.spacing = 20;
      
      
      [verticalStackView addArrangedSubview:previousCity];
